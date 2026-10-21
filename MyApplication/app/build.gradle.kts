@@ -38,6 +38,21 @@ android {
 }
 
 dependencies {
+    // Versiones recomendadas
+    val roomVersion = "2.6.1"
+    val retrofitVersion = "2.9.0"
+
+    // Room (SQLite Local)
+    implementation("androidx.room:room-runtime:$roomVersion")
+    implementation("androidx.room:room-ktx:$roomVersion")
+    ksp("androidx.room:room-compiler:$roomVersion")
+
+    // Retrofit (Conexión con Node.js / MySQL)
+    implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
+    implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
+
+    // Ciclo de vida y ViewModel para Compose
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.material3)
