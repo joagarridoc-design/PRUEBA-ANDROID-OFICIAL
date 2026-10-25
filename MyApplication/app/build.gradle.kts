@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.ksp)
 }
 
 android {
@@ -36,21 +35,11 @@ android {
     buildFeatures {
         compose = true
     }
-    packaging {
-        resources.excludes.add("META-INF/INDEX.LIST")
-        resources.excludes.add("META-INF/DEPENDENCIES")
-        resources.excludes.add("META-INF/io.netty.versions.properties")
-        resources.excludes.add("META-INF/LICENSE")
-        resources.excludes.add("META-INF/LICENSE.txt")
-        resources.excludes.add("META-INF/NOTICE")
-        resources.excludes.add("META-INF/NOTICE.txt")
-    }
 }
 
 dependencies {
-    implementation("com.google.firebase:firebase-appdistribution-gradle:5.3.0")
     // Versiones recomendadas
-    val roomVersion = "2.8.5"
+    val roomVersion = "2.6.1"
     val retrofitVersion = "2.9.0"
 
     // Room (SQLite Local)
